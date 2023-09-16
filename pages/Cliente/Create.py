@@ -4,7 +4,7 @@ import models.Cliente as cliente
 
 
 def IncluirClientePage():
-    st.title("Adicionar Alunos")
+    st.title("Adicionar Aluno")
     with st.form(key="include_cliente"):
         input_name = st.text_input(label="Insira o seu nome")
         input_age = st.number_input(label="Insira sua idade", format="%d", step=1)
