@@ -10,8 +10,8 @@ import pandas as pd
 import pages.Cliente.Create as pageCreateCliente
 import pages.Cliente.List as PageListCliente
 import pages.Cliente.Delete as pageDeleteCliente
-import pages.Cliente.Edit as pageEditCliente
 import pages.Cliente.Edit as pageConsulditCliente
+
 
 st.set_page_config(page_title="Cadastro de Novos Profissionais")
 st.title("Cadastro de Novos Profissionais")
@@ -21,22 +21,19 @@ st.write("Deseja entrar no código do Projeto? [Clique Aqui](https://github.com/
 #Criando as janelas
 
 st.sidebar.title('Menu')
-page_cliente = st.sidebar.selectbox('CLIENTE', ['Criar','Alterar','Excluir','Consultar'])
+page_cliente = st.sidebar.selectbox('CLIENTE', ['Criar','Excluir','Consultar'])
 
 if page_cliente == 'Consultar':
     PageListCliente.List()
 
-if page_cliente == "Alterar":
-    pageEditCliente.AlterarClientepage()
-
-if page_cliente == "Alterar":
-    pageConsulditCliente.AlterconsultClientepage()
-
 
 if page_cliente == 'Criar':
+    st.experimental_set_query_params()
     pageCreateCliente.IncluirClientePage()
 
 if page_cliente == 'Excluir':
     pageDeleteCliente.ExcluirClienteDelete()
+
+
 
   

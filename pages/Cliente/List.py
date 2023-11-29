@@ -4,6 +4,7 @@ import pandas as pd
 
 
 def List():
+    st.experimental_set_query_params()
     st.title("Consulta de Alunos")
 
     costumerList = []
@@ -13,7 +14,8 @@ def List():
 
     df = pd.DataFrame(
         costumerList,
-        columns=['nome_aluno','data_nascimento','sala_aluno']
+        columns=['Nome','Data de Nascimento','Sala']
     )
 
     st.table(df)
+
